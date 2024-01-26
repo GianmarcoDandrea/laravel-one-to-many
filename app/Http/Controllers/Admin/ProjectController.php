@@ -32,6 +32,7 @@ class ProjectController extends Controller
 
     {
         $types=Type::all();
+        
         return view('admin.projects.create',compact('types') );
     }
 
@@ -87,8 +88,6 @@ class ProjectController extends Controller
     {
         $form_data = $request->validated();
         $project->update($form_data);
-
-
 
         return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
