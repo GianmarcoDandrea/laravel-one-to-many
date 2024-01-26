@@ -72,6 +72,11 @@
                                     href="{{ route('admin.projects.trashed') }}">
                                     <i class="fa-solid fa-trash fa-lg fa-fw"></i> Deleted Projects
                                 </a>
+
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.types.index') }}">
+                                    <i class="fa-solid fa-list fa-lg fa-fw"></i> Projects Types
+                                </a>
                             </li>
                         </ul>
 
