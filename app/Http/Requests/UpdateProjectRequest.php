@@ -38,7 +38,7 @@ class UpdateProjectRequest extends FormRequest
             'title.required' => 'Title of the project is required',
             'title.unique' => 'This title has already been taken. Choose another',
             'title.min' => 'Title lenght must be at least of :min letters',
-            'title.min' => 'Title lenght must max of :max letters',
+            'title.max' => 'Title lenght must max of :max letters',
             'description.required' => 'Description of the project is required',
         ];
     }

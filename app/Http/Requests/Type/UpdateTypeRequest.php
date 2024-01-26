@@ -34,7 +34,7 @@ class UpdateTypeRequest extends FormRequest
         return [
             'name.required' => 'Name of the type is required',
             'name.min' => 'Name lenght must be at least of :min letters',
-            'name.min' => 'Name lenght must max of :max letters',
+            'name.max' => 'Name lenght must max of :max letters',
             'name.unique' => 'This name is already used. Try another'
         ];
     }
