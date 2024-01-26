@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2 class="mb-5">List of Projects</h2>
+        <h2 class="mb-5">List of Type </h2>
 
         @if (Session::has('message'))
             <div class="alert alert-success w-50 mx-auto">
