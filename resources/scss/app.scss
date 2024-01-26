@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+textarea {
+    height: 50vh;
+}
+
+.title-column {
+    width: 20%;
+}
+
+.description-column {
+    width: 65%;
+}
+
+.action-column {
+    width: 15%;
+}
