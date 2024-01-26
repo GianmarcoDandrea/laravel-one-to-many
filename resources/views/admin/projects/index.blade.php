@@ -21,9 +21,9 @@
         <table class="table table-striped mt-5 w-100">
             <thead>
                 <tr>
-                    <th scope="col" class="title-column">Title</th>
-                    <th scope="col" class="description-column">Description</th>
-                    <th scope="col" class="action-column">Actions</th>
+                    <th scope="col" class="title-column fs-5">Title</th>
+                    <th scope="col" class="description-column fs-5">Description</th>
+                    <th scope="col" class="action-column fs-5">Actions</th>
                 </tr>
             </thead>
             <tbody class="w-100">
