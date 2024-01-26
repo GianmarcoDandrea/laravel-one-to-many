@@ -13,7 +13,7 @@ class Project extends Model
 
     use SoftDeletes;
 
-    public $fillable = ['title', 'description', 'type_id'];
+    public $fillable = ['title', 'description', 'type_id', 'cover_image'];
 
     public function setTitleAttribute($value)
     {

@@ -63,3 +63,7 @@
 
     @include('partials.delete-modal')
 @endsection
+
+@section('scripts')
+    @vite(['resources/js/image-preview.js'])
+@endsection

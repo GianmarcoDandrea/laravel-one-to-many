@@ -5,7 +5,8 @@
         <h2 class="text-center">Edit Your Project</h2>
 
 
-        <form class="mt-5" action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST">
+        <form class="mt-5" action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST"
+            enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -42,6 +43,15 @@
                 @error('type_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="cover_image">Immagine</label>
+                <input type="file" class="form-control" id="cover_image" name="cover_image">
+            </div>
+
+            <div class="mb-2">
+                <img id="preview-img" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
             </div>
 
             <button class="btn btn-success" type="submit">Save</button>

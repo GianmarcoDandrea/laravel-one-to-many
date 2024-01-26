@@ -1,12 +1,26 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container mt-5">
-        <h2>{{ $project->title }}</h2>
+    <div class="container mt-3 mb-5">
+        <h2 class="fs-1 mb-3">{{ $project->title }}</h2>
+
+        @if ($project->cover_image)
+            <div>
+                <img src="{{ asset('storage/' . $project->cover_image) }}" alt="">
+            </div>
+        @else
+            <div>
+                <img src="{{ Vite::asset('resources/images/image_not_available.jpg') }}" alt="">
+            </div>
+        @endif
+
+        <hr>
+
         <ul>
 
             <li class="mt-5 fs-5">
-                <span class="fw-bold ">Type: </span>{{ $project->type ? $project->type->name : 'No category for this project' }}
+                <span class="fw-bold ">Type:
+                </span>{{ $project->type ? $project->type->name : 'No category for this project' }}
             </li>
 
             <li class="mt-2 fs-5">
@@ -23,8 +37,8 @@
             Project
         </a>
 
-        <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
-            class="d-inline-block" method="POST">
+        <form action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}" class="d-inline-block"
+            method="POST">
 
             @csrf
             @method('DELETE')
@@ -37,4 +51,8 @@
     </div>
 
     @include('partials.delete-modal')
+@endsection
+
+@section('scripts')
+    @vite(['resources/js/image-preview.js'])
 @endsection
