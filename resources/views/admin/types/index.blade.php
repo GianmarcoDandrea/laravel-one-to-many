@@ -19,7 +19,7 @@
                                 <tr>
                                     <td scope="row" class="fw-bold">{{ $type->name }}</td>
                                     <td>
-                                        <a class="btn btn-success" href="">
+                                        <a class="btn btn-success" href="{{ route('admin.types.show', ['type' => $type->slug]) }}">
                                             Details
                                         </a>
 
