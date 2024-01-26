@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
+
+img {
+    max-width: 100%;
+}
 textarea {
     height: 50vh;
 }

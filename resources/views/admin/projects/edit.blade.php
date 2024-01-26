@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container mt-5 w-50">
+    <div class="container w-50 mt-3 mb-5">
         <h2 class="text-center">Edit Your Project</h2>
 
 
@@ -50,7 +50,7 @@
                 <input type="file" class="form-control" id="cover_image" name="cover_image">
             </div>
 
-            <div class="mb-2">
+            <div class="mb-2 mx-auto w-100">
                 <img id="preview-img" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
             </div>
 
@@ -58,4 +58,8 @@
 
         </form>
     </div>
+@endsection
+
+@section('scripts')
+    @vite(['resources/js/image-preview.js'])
 @endsection
