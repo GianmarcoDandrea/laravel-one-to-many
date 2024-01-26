@@ -67,7 +67,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        return view('admin.types.edit', compact('type'));
     }
 
     /**
@@ -79,7 +79,10 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $form_data = $request->validated();
+        $type->update($form_data);
+
+        return redirect()->route('admin.types.show', ['type' => $type->slug]);
     }
 
     /**
@@ -88,8 +91,11 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type = Type::where('slug', $type->slug)->first();
+        $type->delete();
+
+        return redirect()->route('admin.types.index')->with('message', 'The type "' . $type->name . '" has been deleted');
     }
 }
