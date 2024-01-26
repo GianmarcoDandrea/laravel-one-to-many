@@ -28,7 +28,7 @@
             <div class="mb-3 has-validation">
 			    <label for="category">Select type of your project:</label>
 			    <select class="form-select @error('type') is-invalid @enderror" name="category_id" id="type">
-			        <option @selected(!old('type_id')) value="">No category</option>
+			        <option @selected(!old('type_id')) value="">No type</option>
 
 			        @foreach ($types as $type)
 			            <option value="{{$type->id}}">{{$type->name}}</option>
